@@ -1,6 +1,8 @@
+import "./Navbar.css"
+
 export default function Navbar() {
     return (
-        <nav>
+        <nav className="navbar">
             <span>React Kanban</span>
         </nav>
     );
