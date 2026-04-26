@@ -1,6 +1,7 @@
 import "./TaskList.css";
 import PropTypes from "prop-types";
 import TaskItem from "../TaskItem/TaskItem";
+import plusIcon from "../../img/plus-icon.svg"
 
 export default function TaskList({
   title,
@@ -30,8 +31,12 @@ export default function TaskList({
             />
           );
         })}
+        { tasks.length === 0 && <div className="empty-list">Lista vazia</div> }
+        <button onClick={addTask} className="btn">
+        <img src={plusIcon} alt="plus" />
+        
+        Adicionar Tarefa</button>
       </div>
-      <button onClick={addTask}>Adicionar Tarefa</button>
     </div>
   );
 }

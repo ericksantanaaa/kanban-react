@@ -32,12 +32,14 @@ export default function TaskItem({
 
   if (isEditing) {
     return (
-      <input
+      <div className="task-item">
+        <input
         type="text"
         value={editableTitle}
         onChange={onTitleChange}
         onKeyPress={onKeyPress}
       />
+      </div>
     );
   } else {
     return (
