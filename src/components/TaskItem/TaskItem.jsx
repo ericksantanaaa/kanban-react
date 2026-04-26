@@ -17,6 +17,10 @@ export default function TaskItem({ id, title, taskState, onTaskUpdate }) {
     }
   };
 
+  const onTaskStateChange = (event) => {
+    onTaskUpdate(id, title, event.target.value);
+  };
+
   if (isEditing) {
     return (
       <input
@@ -27,7 +31,16 @@ export default function TaskItem({ id, title, taskState, onTaskUpdate }) {
       />
     );
   } else {
-    return <div onClick={(e) => setIsEditing(true)}>{editableTitle}</div>;
+    return (
+      <div>
+        <div onClick={(e) => setIsEditing(true)}>{editableTitle}</div>
+        <select onChange={onTaskStateChange} value={taskState}>
+          <option value="Pendente">Pendente</option>
+          <option value="Fazendo">Fazendo</option>
+          <option value="Completa">Completa</option>
+        </select>
+      </div>
+    );
   }
 }
 

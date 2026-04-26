@@ -23,7 +23,7 @@ export default function TaskList({
               key={task.id}
               id={task.id}
               title={task.title}
-              TaskState={task.state}
+              taskState={task.state}
               onTaskUpdate={onTaskUpdate}
             />
           );
