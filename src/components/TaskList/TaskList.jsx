@@ -8,6 +8,7 @@ export default function TaskList({
   onAddTask,
   tasks,
   onTaskUpdate,
+  onDeleteTask
 }) {
   const addTask = () => {
     onAddTask("Nova tarefa", taskState);
@@ -25,6 +26,7 @@ export default function TaskList({
               title={task.title}
               taskState={task.state}
               onTaskUpdate={onTaskUpdate}
+              onDeleteTask={onDeleteTask}
             />
           );
         })}
