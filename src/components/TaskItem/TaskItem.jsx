@@ -1,14 +1,14 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
+import "./TaskItem.css";
 
-export default function TaskItem({ id, title, taskState }) {
+export default function TaskItem({ id, title, taskState, onTaskUpdate }) {
   const [isEditing, setIsEditing] = useState(false);
   const [editableTitle, setEditableTitle] = useState(title);
   const onTitleChange = (event) => {
     const newTitle = event.target.value;
-    setEditableTitle((existingEditableTitle) => {
-      return newTitle;
-    });
+    setEditableTitle(newTitle);
+    onTaskUpdate(id, newTitle, taskState);
   };
 
   const onKeyPress = (event) => {
