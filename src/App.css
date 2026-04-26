@@ -5,3 +5,13 @@
   min-height: 100vh;
   color: white;
 }
+
+.App .container {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  padding: 8px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 8px;
+}
